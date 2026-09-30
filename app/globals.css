@@ -1,0 +1,80 @@
+@import "tailwindcss";
+
+:root {
+  --color-orange: #e8560e;
+  --color-green: #63813a;
+  --color-ink: #111111;
+  --color-paper: #f4f0e8;
+  --color-paper-alt: #e9e3d6;
+  --color-paper-alt-2: #efe9dc;
+  --color-white: #ffffff;
+
+  --font-display: "Bricolage Grotesque", sans-serif;
+  --font-body: "Instrument Sans", sans-serif;
+  --font-hand: "Caveat", cursive;
+}
+
+@theme inline {
+  --color-orange: var(--color-orange);
+  --color-green: var(--color-green);
+  --color-ink: var(--color-ink);
+  --color-paper: var(--color-paper);
+  --color-paper-alt: var(--color-paper-alt);
+  --color-paper-alt-2: var(--color-paper-alt-2);
+  --font-display: var(--font-display);
+  --font-body: var(--font-body);
+  --font-hand: var(--font-hand);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+body {
+  margin: 0;
+  background: var(--color-paper);
+  color: var(--color-ink);
+  font-family: var(--font-body);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+a {
+  color: var(--color-orange);
+  text-decoration: none;
+}
+
+:focus-visible {
+  outline: 3px solid var(--color-green);
+  outline-offset: 3px;
+}
+
+.underline-reveal {
+  background-image: linear-gradient(var(--color-orange), var(--color-orange));
+  background-repeat: no-repeat;
+  background-position: 0 100%;
+  background-size: 0 2px;
+  transition: background-size 0.3s;
+}
+
+.underline-reveal:hover,
+.underline-reveal:focus-visible {
+  background-size: 100% 2px;
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
